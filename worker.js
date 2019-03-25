@@ -1,0 +1,6 @@
+self.postMessage("1")
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then(x => x.text())
+  .then(data => self.postMessage(data))
+  .catch(() => {})
+  .then(() => self.postMessage("finished"))

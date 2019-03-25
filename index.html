@@ -1,0 +1,12 @@
+<html>
+  <script>
+    const worker = new Worker('worker.js')
+    worker.onmessage = ({ data }) => {
+      if (window.__log__) {
+        window.__log__(data)
+      } else {
+        console.log(data)
+      }
+    }
+  </script>
+</html>
